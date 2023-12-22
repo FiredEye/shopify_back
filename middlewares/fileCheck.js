@@ -1,7 +1,7 @@
 const path = require("path");
 const fs = require("fs");
 const { getDownloadURL } = require("firebase-admin/storage");
-const bucket = require("../firebaseConfig");
+const bucket = require("../models/firebaseConfig");
 const { v4: uuidv4 } = require("uuid");
 require("dotenv").config();
 const extTypes = [".jpg", ".jpeg", ".png"];
