@@ -19,7 +19,9 @@ app.use(
     abortOnLimit: true,
   })
 );
-
+app.get("/", (req, res) => {
+  res.status(200).json({ message: "It's Working!" });
+});
 app.use(authRoutes);
 app.use(productRoutes);
 app.use(orderRoutes);
