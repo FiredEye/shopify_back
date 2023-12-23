@@ -12,16 +12,14 @@ app.use(express.json());
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
 // app.use("/uploads", express.static(path.join(__dirname, "uploads")));
-// app.use("/uploads", express.static("uploads"));
+app.use("/uploads", express.static("uploads"));
 app.use(
   fileUpload({
     limits: { fileSize: 15 * 1024 * 1024 },
     abortOnLimit: true,
   })
 );
-app.get("/", (req, res) => {
-  res.status(200).json({ message: "It's Working!" });
-});
+
 app.use(authRoutes);
 app.use(productRoutes);
 app.use(orderRoutes);
